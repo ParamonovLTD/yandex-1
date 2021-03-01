@@ -1,15 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stories</title>
-    <link rel="stylesheet" href="./css/stories.css">
-  </head>
-  <body>
-    <!-- <template class="leaders-temp"> -->
-    <!-- <div class="leaders">
+const culcBarHeight = () => {
+  let maxBarHeight = window.orientation === 0 ? 48.65 : 28.72
+  // let maxBarHeight = window.orientation === 0 ? 325 : 108 //28.72
+
+  const scores = Array.from(
+    document.querySelectorAll('.leaders__item .leader__score')
+  )
+  const bars = Array.from(
+    document.querySelectorAll('.leaders__item .leader__bar')
+  )
+  console.log(maxBarHeight + '%')
+  bars.forEach((bar, index) => {
+    let currentScore = scores[index].textContent
+    bar.style.height =
+      (maxBarHeight / scores[0].textContent) * currentScore + 'vh'
+  })
+}
+
+function renderTemplate() {
+  return `
+    <div class="leaders">
       <h1 class="leaders__title">Больше всего коммитов</h1>
       <h2 class="leaders__subtitle">Спринт № 213</h2>
       <ul class="leaders__list">
@@ -104,9 +113,13 @@
           </div>
         </li>
       </ul>
-    </div> -->
-    <!-- </template> -->
+    </div>
+  `
+}
 
-    <script src="./js/stories.js"></script>
-  </body>
-</html>
+document.body.insertAdjacentHTML('afterbegin', renderTemplate())
+
+culcBarHeight()
+window.addEventListener('orientationchange', () => {
+  culcBarHeight()
+})
