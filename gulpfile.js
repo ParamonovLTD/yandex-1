@@ -17,17 +17,19 @@ var include = require('posthtml-include')
 var del = require('del')
 
 gulp.task('css', function () {
-  return gulp
-    .src('source/sass/style.scss')
-    .pipe(plumber())
-    .pipe(sourcemap.init())
-    .pipe(sass())
-    .pipe(postcss([autoprefixer()]))
-    .pipe(csso())
-    .pipe(rename('style.min.css'))
-    .pipe(sourcemap.write('.'))
-    .pipe(gulp.dest('build/css'))
-    .pipe(server.stream())
+  return (
+    gulp
+      .src('source/sass/style.scss')
+      .pipe(plumber())
+      .pipe(sourcemap.init())
+      .pipe(sass())
+      .pipe(postcss([autoprefixer()]))
+      // .pipe(csso())
+      .pipe(rename('stories.css'))
+      .pipe(sourcemap.write('.'))
+      .pipe(gulp.dest('build/css'))
+      .pipe(server.stream())
+  )
 })
 
 gulp.task('server', function () {
@@ -90,10 +92,10 @@ gulp.task('copy', function () {
   return gulp
     .src(
       [
-        'source/fonts/**/*.{woff,woff2}',
-        'source/img/**',
-        'source/js/**',
+        'source/fonts/**/*',
+        'source/images/**',
         'source//*.ico',
+        'source/js/**',
       ],
       {
         base: 'source',
@@ -102,9 +104,18 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('build'))
 })
 
-gulp.task('clean', function () {
-  return del('build')
+gulp.task('copyHead', function () {
+  return gulp
+    .src(['build/js/stories.js', 'build/css/stories.css'])
+    .pipe(gulp.dest('./'))
 })
 
-gulp.task('build', gulp.series('clean', 'copy', 'css', 'sprite', 'html'))
+gulp.task('clean', function () {
+  return del(['build', 'stories.css', 'stories.css.map'])
+})
+
+gulp.task(
+  'build',
+  gulp.series('clean', 'copy', 'css', 'copyHead', 'sprite', 'html')
+)
 gulp.task('start', gulp.series('build', 'server'))
