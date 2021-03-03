@@ -131,13 +131,13 @@ const culcBarHeight = () => {
   })
 }
 
-function renderTemplate(alias, data) {
+window.renderTemplate = function (alias, data) {
   return templates.find(template => template.alias === alias).getTemplate(data)
 }
 
 document.body.insertAdjacentHTML(
   'afterbegin',
-  renderTemplate('leaders', {
+  window.renderTemplate('leaders', {
     title: 'Самый большой коммит',
     subtitle: 'Спринт № 213',
     emoji: '😮',
@@ -183,14 +183,16 @@ function getUrlParamValue(key) {
 }
 
 function setTheme() {
+  const themeValue = getUrlParamValue('theme')
+
   document.body.classList.forEach(className => {
-    if (className.startsWith('theme')) {
+    if (className.startsWith('theme') && themeValue !== false) {
       document.body.classList.remove(className)
     }
   })
-  const themeValue = getUrlParamValue('theme')
-
-  document.body.classList.add(`theme_${themeValue}`)
+  if (themeValue) {
+    document.body.classList.add(`theme_${themeValue}`)
+  }
 }
 setTheme()
 
