@@ -135,46 +135,46 @@ window.renderTemplate = function (alias, data) {
   return templates.find(template => template.alias === alias).getTemplate(data)
 }
 
-document.body.insertAdjacentHTML(
-  'afterbegin',
-  window.renderTemplate('leaders', {
-    title: 'Самый большой коммит',
-    subtitle: 'Спринт № 213',
-    emoji: '😮',
-    users: [
-      {
-        id: 12,
-        name: 'Алексей Ярошевич',
-        avatar: '12.jpg',
-        valueText: '4001 строка',
-      },
-      {
-        id: 5,
-        name: 'Александр Николаичев',
-        avatar: '5.jpg',
-        valueText: '3845 строк',
-      },
-      {
-        id: 8,
-        name: 'Александр Иванков',
-        avatar: '8.jpg',
-        valueText: '3640 строк',
-      },
-      {
-        id: 10,
-        name: 'Яна Берникова',
-        avatar: '10.jpg',
-        valueText: '3453 строки',
-      },
-      {
-        id: 4,
-        name: 'Вадим Пацев',
-        avatar: '4.jpg',
-        valueText: '2852 строки',
-      },
-    ],
-  })
-)
+// document.body.insertAdjacentHTML(
+//   'afterbegin',
+//   window.renderTemplate('leaders', {
+//     title: 'Самый большой коммит',
+//     subtitle: 'Спринт № 213',
+//     emoji: '😮',
+//     users: [
+//       {
+//         id: 12,
+//         name: 'Алексей Ярошевич',
+//         avatar: '12.jpg',
+//         valueText: '4001 строка',
+//       },
+//       {
+//         id: 5,
+//         name: 'Александр Николаичев',
+//         avatar: '5.jpg',
+//         valueText: '3845 строк',
+//       },
+//       {
+//         id: 8,
+//         name: 'Александр Иванков',
+//         avatar: '8.jpg',
+//         valueText: '3640 строк',
+//       },
+//       {
+//         id: 10,
+//         name: 'Яна Берникова',
+//         avatar: '10.jpg',
+//         valueText: '3453 строки',
+//       },
+//       {
+//         id: 4,
+//         name: 'Вадим Пацев',
+//         avatar: '4.jpg',
+//         valueText: '2852 строки',
+//       },
+//     ],
+//   })
+// )
 
 culcBarHeight()
 window.addEventListener('orientationchange', () => {
