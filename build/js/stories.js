@@ -166,7 +166,12 @@ document.body.insertAdjacentHTML(
         avatar: '10.jpg',
         valueText: '3453 строки',
       },
-      { id: 4, name: 'Вадим Пацев', avatar: '4.jpg', valueText: '2852 строки' },
+      {
+        id: 4,
+        name: 'Вадим Пацев',
+        avatar: '4.jpg',
+        valueText: '2852 строки',
+      },
     ],
   })
 )
@@ -195,5 +200,4 @@ function setTheme() {
   }
 }
 setTheme()
-
 // history.replaceState({}, '', oldUrl + '?theme=light')
