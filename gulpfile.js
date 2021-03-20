@@ -27,7 +27,7 @@ gulp.task('css', function () {
       // .pipe(csso())
       .pipe(rename('stories.css'))
       .pipe(sourcemap.write('.'))
-      .pipe(gulp.dest('build/css'))
+      .pipe(gulp.dest('build'))
       .pipe(server.stream())
   )
 })
@@ -91,12 +91,7 @@ gulp.task('html', function () {
 gulp.task('copy', function () {
   return gulp
     .src(
-      [
-        'source/fonts/**/*',
-        'source/images/**',
-        'source//*.ico',
-        'source/js/**',
-      ],
+      ['source/fonts/**/*', 'source/images/**', 'source//*.ico', 'source/*.js'],
       {
         base: 'source',
       }
@@ -104,18 +99,9 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('build'))
 })
 
-gulp.task('copyHead', function () {
-  return gulp
-    .src(['build/js/stories.js', 'build/css/stories.css'])
-    .pipe(gulp.dest('./'))
-})
-
 gulp.task('clean', function () {
   return del(['build', 'stories.css', 'stories.css.map'])
 })
 
-gulp.task(
-  'build',
-  gulp.series('clean', 'copy', 'css', 'copyHead', 'sprite', 'html')
-)
+gulp.task('build', gulp.series('clean', 'copy', 'css', 'sprite', 'html'))
 gulp.task('start', gulp.series('build', 'server'))
