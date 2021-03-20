@@ -11,7 +11,9 @@ const templates = [
               <div class="leaders__member leader leader--winner">
                 <div class="leader__user">
                   <div class="leader__avatar-wrapper">
-                    <span class="leader__avatar-winner-emoji">${data.emoji}</span>
+                    <span class="leader__avatar-winner-emoji">${
+                      data.emoji
+                    }</span>
                     <img
                       class="leader__avatar"
                       src="./images/1x/${data.users[0].avatar}"
@@ -80,7 +82,7 @@ const templates = [
                 <div class="leader__bar"><span>4</span></div>
               </div>
             </li>
-            <li class="leaders__item leaders__item-choosen-user">
+            <li class="leaders__item leaders__item-fifth-place">
               <div class="leaders__member leader">
                 <div class="leader__user">
                   <div class="leader__avatar-wrapper">
@@ -98,6 +100,48 @@ const templates = [
                 <div class="leader__bar"><span>5</span></div>
               </div>
             </li>
+            ${
+              data.selectedUserId
+                ? `<li class="leaders__item leaders__item--choosen-user">
+            <div class="leaders__member leader">
+              <div class="leader__user">
+                <div class="leader__avatar-wrapper">
+                  <img
+                    class="leader__avatar"
+                    src="./images/1x/${
+                      data.selectedUserId
+                        ? data.users.find(
+                            user => user.id === data.selectedUserId
+                          ).avatar
+                        : ''
+                    }"
+                    width="64"
+                    height="64"
+                    alt="Фотография участника"
+                  />
+                </div>
+                <p class="leader__name">${
+                  data.selectedUserId
+                    ? data.users.find(user => user.id === data.selectedUserId)
+                        .name
+                    : ''
+                }</p>
+                <p class="leader__score">${
+                  data.selectedUserId
+                    ? data.users.find(user => user.id === data.selectedUserId)
+                        .valueText
+                    : ''
+                }</p>
+              </div>
+              <div class="leader__bar"><span>${
+                data.users.indexOf(
+                  data.users.find(user => user.id === data.selectedUserId)
+                ) + 1
+              }</span></div>
+            </div>
+          </li>`
+                : ''
+            }
           </ul>
         </div>
       `
@@ -120,7 +164,9 @@ const culcBarHeight = () => {
 
     if (
       window.orientation === 0 &&
-      bar.parentNode.parentNode.classList.contains('leaders__item-choosen-user')
+      bar.parentNode.parentNode.classList.contains(
+        'leaders__item--choosen-user'
+      )
     ) {
       bar.style.height = 'auto'
     } else {
@@ -131,54 +177,109 @@ const culcBarHeight = () => {
   })
 }
 
+function setChoosenUserVisibility() {
+  const userOnFifthPlace = document.querySelector('.leaders__item-fifth-place')
+  const choosenUser = document.querySelector('.leaders__item--choosen-user')
+  if (choosenUser) {
+    const choosenUserPlace = choosenUser.querySelector('.leader__bar > span')
+      .textContent
+
+    userOnFifthPlace.style.display = choosenUserPlace > 4 ? 'none' : 'block'
+
+    choosenUser.style.display =
+      choosenUserPlace > 4 || window.orientation === 0 ? 'block' : 'none'
+
+    choosenUser.classList.add('leaders__item-fifth-place')
+  }
+}
+
 window.renderTemplate = function (alias, data) {
   return templates.find(template => template.alias === alias).getTemplate(data)
 }
 
-document.body.insertAdjacentHTML(
-  'afterbegin',
-  window.renderTemplate('leaders', {
-    title: 'Самый большой коммит',
-    subtitle: 'Спринт № 213',
-    emoji: '😮',
-    users: [
-      {
-        id: 12,
-        name: 'Алексей Ярошевич',
-        avatar: '12.jpg',
-        valueText: '4001 строка',
-      },
-      {
-        id: 5,
-        name: 'Александр Николаичев',
-        avatar: '5.jpg',
-        valueText: '3845 строк',
-      },
-      {
-        id: 8,
-        name: 'Александр Иванков',
-        avatar: '8.jpg',
-        valueText: '3640 строк',
-      },
-      {
-        id: 10,
-        name: 'Яна Берникова',
-        avatar: '10.jpg',
-        valueText: '3453 строки',
-      },
-      {
-        id: 4,
-        name: 'Вадим Пацев',
-        avatar: '4.jpg',
-        valueText: '2852 строки',
-      },
-    ],
-  })
-)
+// document.body.insertAdjacentHTML(
+//   'afterbegin',
+//   window.renderTemplate('leaders', {
+//     title: 'Самый 🔎 внимательный разработчик',
+//     subtitle: 'Спринт № 213',
+//     emoji: '🔎',
+//     users: [
+//       {
+//         id: 1,
+//         name: 'Евгений Дементьев',
+//         avatar: '1.jpg',
+//         valueText: '22 голоса',
+//       },
+//       { id: 4, name: 'Вадим Пацев', avatar: '4.jpg', valueText: '19 голосов' },
+//       {
+//         id: 10,
+//         name: 'Яна Берникова',
+//         avatar: '10.jpg',
+//         valueText: '17 голосов',
+//       },
+//       {
+//         id: 12,
+//         name: 'Алексей Ярошевич',
+//         avatar: '12.jpg',
+//         valueText: '16 голосов',
+//       },
+//       {
+//         id: 11,
+//         name: 'Юрий Фролов',
+//         avatar: '11.jpg',
+//         valueText: '15 голосов',
+//       },
+//       {
+//         id: 2,
+//         name: 'Александр Шлейко',
+//         avatar: '2.jpg',
+//         valueText: '14 голосов',
+//       },
+//       {
+//         id: 5,
+//         name: 'Александр Николаичев',
+//         avatar: '5.jpg',
+//         valueText: '12 голосов',
+//       },
+//       {
+//         id: 6,
+//         name: 'Андрей Мокроусов',
+//         avatar: '6.jpg',
+//         valueText: '9 голосов',
+//       },
+//       {
+//         id: 8,
+//         name: 'Александр Иванков',
+//         avatar: '8.jpg',
+//         valueText: '8 голосов',
+//       },
+//       {
+//         id: 7,
+//         name: 'Дмитрий Андриянов',
+//         avatar: '7.jpg',
+//         valueText: '6 голосов',
+//       },
+//       {
+//         id: 3,
+//         name: 'Дарья Ковалева',
+//         avatar: '3.jpg',
+//         valueText: '5 голосов',
+//       },
+//       {
+//         id: 9,
+//         name: 'Сергей Бережной',
+//         avatar: '9.jpg',
+//         valueText: '4 голоса',
+//       },
+//     ],
+//   })
+// )
 
 culcBarHeight()
+setChoosenUserVisibility()
 window.addEventListener('orientationchange', () => {
   culcBarHeight()
+  setChoosenUserVisibility()
 })
 
 function getUrlParamValue(key) {
@@ -200,4 +301,3 @@ function setTheme() {
   }
 }
 setTheme()
-// history.replaceState({}, '', oldUrl + '?theme=light')
