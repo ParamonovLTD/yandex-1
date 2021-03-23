@@ -152,7 +152,8 @@ body.theme_light {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  font-family: "Roboto", "Arial", sans-serif; }
+  font-family: "Roboto", "Arial", sans-serif;
+  letter-spacing: -0.1px; }
 
 .leaders__list {
   margin: 0;
@@ -224,7 +225,7 @@ body.theme_light {
     content: '👍';
     position: absolute;
     z-index: 1;
-    top: -20px;
+    top: -22px;
     left: calc(50% - 5px);
     width: 32px;
     height: 32px;
@@ -239,7 +240,7 @@ body.theme_light {
     .leaders__item--choosen-user .leader__bar::before {
       content: '';
       position: absolute;
-      top: -8px;
+      top: -7px;
       left: 50%;
       width: 60px;
       height: 1px;
@@ -334,6 +335,7 @@ body.theme_light {
   padding: 0;
   max-width: 100px;
   margin-bottom: 4px;
+  padding-left: 1px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
@@ -342,6 +344,7 @@ body.theme_light {
 .leader__score {
   margin: 0;
   padding: 0;
+  padding-left: 1px;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
