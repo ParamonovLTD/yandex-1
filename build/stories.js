@@ -3,9 +3,9 @@ const templates = [
     alias: 'leaders',
     getTemplate(data) {
       return `
-        <div class="leaders">
-          <h1 class="leaders__title">${data.title}</h1>
-          <h2 class="leaders__subtitle">${data.subtitle}</h2>
+        <div class="leaders story">
+          <h1 class="story__title">${data.title}</h1>
+          <h2 class="story__subtitle">${data.subtitle}</h2>
           <ul class="leaders__list">
             <li class="leaders__item leaders__item-first-place">
               <div class="leaders__member leader leader--winner">
@@ -82,6 +82,9 @@ const templates = [
                 <div class="leader__bar"><span>4</span></div>
               </div>
             </li>
+            ${
+              !data.selectedUserId
+                ? `
             <li class="leaders__item leaders__item-fifth-place">
               <div class="leaders__member leader">
                 <div class="leader__user">
@@ -99,10 +102,8 @@ const templates = [
                 </div>
                 <div class="leader__bar"><span>5</span></div>
               </div>
-            </li>
-            ${
-              data.selectedUserId
-                ? `<li class="leaders__item leaders__item--choosen-user">
+            </li>`
+                : `<li class="leaders__item leaders__item-fifth-place leaders__item--choosen-user">
             <div class="leaders__member leader">
               <div class="leader__user">
                 <div class="leader__avatar-wrapper">
@@ -140,7 +141,6 @@ const templates = [
               }</span></div>
             </div>
           </li>`
-                : ''
             }
           </ul>
         </div>
@@ -149,138 +149,139 @@ const templates = [
   },
 ]
 
-const culcBarHeight = () => {
-  let maxBarHeight = window.orientation === 0 ? 48.65 : 28.72
-
-  const scores = Array.from(
-    document.querySelectorAll('.leaders__item .leader__score')
-  )
-  const bars = Array.from(
-    document.querySelectorAll('.leaders__item .leader__bar')
-  )
-
-  bars.forEach((bar, index) => {
-    let currentScore = parseInt(scores[index].textContent.split(' ')[0])
-
-    if (
-      window.orientation === 0 &&
-      bar.parentNode.parentNode.classList.contains(
-        'leaders__item--choosen-user'
-      )
-    ) {
-      bar.style.height = 'auto'
-    } else {
-      bar.style.height =
-        (maxBarHeight / scores[0].textContent.split(' ')[0]) * currentScore +
-        'vh'
-    }
-  })
-}
-
-function setChoosenUserVisibility() {
-  const userOnFifthPlace = document.querySelector('.leaders__item-fifth-place')
-  const choosenUser = document.querySelector('.leaders__item--choosen-user')
-  if (choosenUser) {
-    const choosenUserPlace = choosenUser.querySelector('.leader__bar > span')
-      .textContent
-
-    userOnFifthPlace.style.display = choosenUserPlace > 4 ? 'none' : 'block'
-
-    choosenUser.style.display =
-      choosenUserPlace > 4 || window.orientation === 0 ? 'block' : 'none'
-
-    choosenUser.classList.add('leaders__item-fifth-place')
-  }
-}
-
 window.renderTemplate = function (alias, data) {
   return templates.find(template => template.alias === alias).getTemplate(data)
 }
 
-// document.body.insertAdjacentHTML(
-//   'afterbegin',
-//   window.renderTemplate('leaders', {
-//     title: 'Самый 🔎 внимательный разработчик',
-//     subtitle: 'Спринт № 213',
-//     emoji: '🔎',
-//     users: [
-//       {
-//         id: 1,
-//         name: 'Евгений Дементьев',
-//         avatar: '1.jpg',
-//         valueText: '22 голоса',
-//       },
-//       { id: 4, name: 'Вадим Пацев', avatar: '4.jpg', valueText: '19 голосов' },
-//       {
-//         id: 10,
-//         name: 'Яна Берникова',
-//         avatar: '10.jpg',
-//         valueText: '17 голосов',
-//       },
-//       {
-//         id: 12,
-//         name: 'Алексей Ярошевич',
-//         avatar: '12.jpg',
-//         valueText: '16 голосов',
-//       },
-//       {
-//         id: 11,
-//         name: 'Юрий Фролов',
-//         avatar: '11.jpg',
-//         valueText: '15 голосов',
-//       },
-//       {
-//         id: 2,
-//         name: 'Александр Шлейко',
-//         avatar: '2.jpg',
-//         valueText: '14 голосов',
-//       },
-//       {
-//         id: 5,
-//         name: 'Александр Николаичев',
-//         avatar: '5.jpg',
-//         valueText: '12 голосов',
-//       },
-//       {
-//         id: 6,
-//         name: 'Андрей Мокроусов',
-//         avatar: '6.jpg',
-//         valueText: '9 голосов',
-//       },
-//       {
-//         id: 8,
-//         name: 'Александр Иванков',
-//         avatar: '8.jpg',
-//         valueText: '8 голосов',
-//       },
-//       {
-//         id: 7,
-//         name: 'Дмитрий Андриянов',
-//         avatar: '7.jpg',
-//         valueText: '6 голосов',
-//       },
-//       {
-//         id: 3,
-//         name: 'Дарья Ковалева',
-//         avatar: '3.jpg',
-//         valueText: '5 голосов',
-//       },
-//       {
-//         id: 9,
-//         name: 'Сергей Бережной',
-//         avatar: '9.jpg',
-//         valueText: '4 голоса',
-//       },
-//     ],
-//   })
-// )
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  window.renderTemplate('leaders', {
+    title: 'Самый 🔎 внимательный разработчик',
+    subtitle: 'Спринт № 213',
+    emoji: '🔎',
+    // selectedUserId: 5,
+    users: [
+      {
+        id: 1,
+        name: 'Евгений Дементьев',
+        avatar: '1.jpg',
+        valueText: '22 голоса',
+      },
+      { id: 4, name: 'Вадим Пацев', avatar: '4.jpg', valueText: '19 голосов' },
+      {
+        id: 10,
+        name: 'Яна Берникова',
+        avatar: '10.jpg',
+        valueText: '17 голосов',
+      },
+      {
+        id: 12,
+        name: 'Алексей Ярошевич',
+        avatar: '12.jpg',
+        valueText: '16 голосов',
+      },
+      {
+        id: 11,
+        name: 'Юрий Фролов',
+        avatar: '11.jpg',
+        valueText: '15 голосов',
+      },
+      {
+        id: 2,
+        name: 'Александр Шлейко',
+        avatar: '2.jpg',
+        valueText: '14 голосов',
+      },
+      {
+        id: 5,
+        name: 'Александр Николаичев',
+        avatar: '5.jpg',
+        valueText: '12 голосов',
+      },
+      {
+        id: 6,
+        name: 'Андрей Мокроусов',
+        avatar: '6.jpg',
+        valueText: '9 голосов',
+      },
+      {
+        id: 8,
+        name: 'Александр Иванков',
+        avatar: '8.jpg',
+        valueText: '8 голосов',
+      },
+      {
+        id: 7,
+        name: 'Дмитрий Андриянов',
+        avatar: '7.jpg',
+        valueText: '6 голосов',
+      },
+      {
+        id: 3,
+        name: 'Дарья Ковалева',
+        avatar: '3.jpg',
+        valueText: '5 голосов',
+      },
+      {
+        id: 9,
+        name: 'Сергей Бережной',
+        avatar: '9.jpg',
+        valueText: '4 голоса',
+      },
+    ],
+  })
+)
 
-culcBarHeight()
-setChoosenUserVisibility()
-window.addEventListener('orientationchange', () => {
-  culcBarHeight()
-  setChoosenUserVisibility()
-})
+// const culcBarHeight = () => {
+//   let maxBarHeight = window.orientation === 0 ? 48.65 : 28.72
+
+//   const scores = Array.from(
+//     document.querySelectorAll('.leaders__item .leader__score')
+//   )
+//   const bars = Array.from(
+//     document.querySelectorAll('.leaders__item .leader__bar')
+//   )
+
+//   bars.forEach((bar, index) => {
+//     let currentScore = parseInt(scores[index].textContent.split(' ')[0])
+
+//     if (
+//       window.orientation === 0 &&
+//       bar.parentNode.parentNode.classList.contains(
+//         'leaders__item--choosen-user'
+//       )
+//     ) {
+//       bar.style.height = 'auto'
+//     } else {
+//       bar.style.height =
+//         (maxBarHeight / scores[0].textContent.split(' ')[0]) * currentScore +
+//         'vh'
+//     }
+//   })
+// }
+
+// function setChoosenUserVisibility() {
+//   const userOnFifthPlace = document.querySelector('.leaders__item-fifth-place')
+//   const choosenUser = document.querySelector('.leaders__item--choosen-user')
+//   if (choosenUser) {
+//     const choosenUserPlace = choosenUser.querySelector('.leader__bar > span')
+//       .textContent
+
+//     userOnFifthPlace.style.display = choosenUserPlace > 4 ? 'none' : 'block'
+
+//     choosenUser.style.display =
+//       choosenUserPlace > 4 || window.orientation === 0 ? 'block' : 'none'
+
+//     choosenUser.classList.add('leaders__item-fifth-place')
+//   }
+// }
+
+// culcBarHeight()
+// setChoosenUserVisibility()
+// window.addEventListener('orientationchange', () => {
+//   culcBarHeight()
+//   setChoosenUserVisibility()
+// })
 
 function getUrlParamValue(key) {
   let url = window.location.search
