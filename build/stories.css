@@ -199,7 +199,7 @@ body.theme_light {
   .leaders__item-second-place .leader__bar {
     height: 41.17vh;
     margin-left: -16px;
-    padding-left: 10px; }
+    padding-left: 11px; }
 
 .leaders__item-third-place {
   z-index: 1;
@@ -274,7 +274,7 @@ body.theme_light {
     .leaders__item-fourth-place .leader__bar {
       height: 18.09vh;
       margin-left: -16px;
-      padding-left: 9px; }
+      padding-left: 11px; }
   .leaders__item-fifth-place {
     position: static;
     z-index: 0;
