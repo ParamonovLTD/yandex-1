@@ -319,7 +319,7 @@ body.theme_light {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 17px; }
+  margin-bottom: 16px; }
 
 .leader__avatar-wrapper {
   position: relative;
@@ -334,12 +334,13 @@ body.theme_light {
   margin: 0;
   padding: 0;
   max-width: 100px;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   padding-left: 1px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  font-family: "Roboto", "Arial", sans-serif; }
+  font-family: "Roboto", "Arial", sans-serif;
+  letter-spacing: -0.1px; }
 
 .leader__score {
   margin: 0;
@@ -352,7 +353,7 @@ body.theme_light {
 .leader__bar {
   display: block;
   width: 120px;
-  padding-top: 18px;
+  padding-top: 17px;
   border-radius: 6px 6px 0 0; }
 
 .leader__bar > span {
