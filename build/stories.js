@@ -156,78 +156,15 @@ window.renderTemplate = function (alias, data) {
 document.body.insertAdjacentHTML(
   'afterbegin',
   window.renderTemplate('leaders', {
-    title: 'Самый 🔎 внимательный разработчик',
+    title: 'Больше всего коммитов',
     subtitle: 'Спринт № 213',
-    emoji: '🔎',
-    // selectedUserId: 5,
+    emoji: '👑',
     users: [
-      {
-        id: 1,
-        name: 'Евгений Дементьев',
-        avatar: '1.jpg',
-        valueText: '22 голоса',
-      },
-      { id: 4, name: 'Вадим Пацев', avatar: '4.jpg', valueText: '19 голосов' },
-      {
-        id: 10,
-        name: 'Яна Берникова',
-        avatar: '10.jpg',
-        valueText: '17 голосов',
-      },
-      {
-        id: 12,
-        name: 'Алексей Ярошевич',
-        avatar: '12.jpg',
-        valueText: '16 голосов',
-      },
-      {
-        id: 11,
-        name: 'Юрий Фролов',
-        avatar: '11.jpg',
-        valueText: '15 голосов',
-      },
-      {
-        id: 2,
-        name: 'Александр Шлейко',
-        avatar: '2.jpg',
-        valueText: '14 голосов',
-      },
-      {
-        id: 5,
-        name: 'Александр Николаичев',
-        avatar: '5.jpg',
-        valueText: '12 голосов',
-      },
-      {
-        id: 6,
-        name: 'Андрей Мокроусов',
-        avatar: '6.jpg',
-        valueText: '9 голосов',
-      },
-      {
-        id: 8,
-        name: 'Александр Иванков',
-        avatar: '8.jpg',
-        valueText: '8 голосов',
-      },
-      {
-        id: 7,
-        name: 'Дмитрий Андриянов',
-        avatar: '7.jpg',
-        valueText: '6 голосов',
-      },
-      {
-        id: 3,
-        name: 'Дарья Ковалева',
-        avatar: '3.jpg',
-        valueText: '5 голосов',
-      },
-      {
-        id: 9,
-        name: 'Сергей Бережной',
-        avatar: '9.jpg',
-        valueText: '4 голоса',
-      },
+      { id: 3, name: 'Дарья Ковалева', avatar: '3.jpg', valueText: '32' },
+      { id: 9, name: 'Сергей Бережной', avatar: '9.jpg', valueText: '27' },
+      { id: 7, name: 'Дмитрий Андриянов', avatar: '7.jpg', valueText: '22' },
+      { id: 6, name: 'Андрей Мокроусов', avatar: '6.jpg', valueText: '20' },
+      { id: 8, name: 'Александр Иванков', avatar: '8.jpg', valueText: '19' },
     ],
   })
 )

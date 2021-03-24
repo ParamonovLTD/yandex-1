@@ -152,8 +152,7 @@ body.theme_light {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  font-family: "Roboto", "Arial", sans-serif;
-  letter-spacing: -0.2px; }
+  font-family: "Roboto", "Arial", sans-serif; }
 
 .leaders__list {
   margin: 0;
@@ -199,7 +198,7 @@ body.theme_light {
   .leaders__item-second-place .leader__bar {
     height: 41.17vh;
     margin-left: -16px;
-    padding-left: 14px; }
+    padding-left: 16px; }
 
 .leaders__item-third-place {
   z-index: 1;
@@ -209,7 +208,7 @@ body.theme_light {
   .leaders__item-third-place .leader__bar {
     height: 33.68vh;
     margin-right: -16px;
-    padding-right: 13px; }
+    padding-right: 16px; }
 
 .leaders__item-fourth-place {
   display: none; }
@@ -274,7 +273,7 @@ body.theme_light {
     .leaders__item-fourth-place .leader__bar {
       height: 18.09vh;
       margin-left: -16px;
-      padding-left: 14px; }
+      padding-left: 16px; }
   .leaders__item-fifth-place {
     position: static;
     z-index: 0;
@@ -286,8 +285,8 @@ body.theme_light {
       position: static;
       height: 18.09vh;
       margin-right: -16px;
-      padding-top: 16px;
-      padding-right: 14px;
+      padding-top: 18px;
+      padding-right: 16px;
       padding-bottom: 0; }
       .leaders__item-fifth-place .leader__bar::before {
         display: none; } }
@@ -319,7 +318,7 @@ body.theme_light {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 16px; }
+  margin-bottom: 15px; }
 
 .leader__avatar-wrapper {
   position: relative;
@@ -334,13 +333,13 @@ body.theme_light {
   margin: 0;
   padding: 0;
   max-width: 100px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   padding-left: 1px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
   font-family: "Roboto", "Arial", sans-serif;
-  letter-spacing: -0.1px; }
+  letter-spacing: 0.1px; }
 
 .leader__score {
   margin: 0;
@@ -353,7 +352,7 @@ body.theme_light {
 .leader__bar {
   display: block;
   width: 120px;
-  padding-top: 17px;
+  padding-top: 18px;
   border-radius: 6px 6px 0 0; }
 
 .leader__bar > span {
