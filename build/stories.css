@@ -153,6 +153,7 @@ body.theme_light {
   font-size: 16px;
   line-height: 18px;
   font-family: "Roboto", "Arial", sans-serif;
+  padding-left: 1px;
   letter-spacing: -0.1px; }
 
 .leaders__list {
@@ -334,13 +335,12 @@ body.theme_light {
   margin: 0;
   padding: 0;
   max-width: 100px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   padding-left: 1px;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  font-family: "Roboto", "Arial", sans-serif;
-  letter-spacing: 0.1px; }
+  font-family: "Roboto", "Arial", sans-serif; }
 
 .leader__score {
   margin: 0;
