@@ -153,8 +153,7 @@ body.theme_light {
   font-size: 16px;
   line-height: 18px;
   font-family: "Roboto", "Arial", sans-serif;
-  padding-left: 1px;
-  letter-spacing: -0.1px; }
+  letter-spacing: -0.2px; }
 
 .leaders__list {
   margin: 0;
@@ -320,7 +319,7 @@ body.theme_light {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 16px; }
+  margin-bottom: 17px; }
 
 .leader__avatar-wrapper {
   position: relative;
@@ -335,7 +334,7 @@ body.theme_light {
   margin: 0;
   padding: 0;
   max-width: 100px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   padding-left: 1px;
   font-weight: 500;
   font-size: 16px;
