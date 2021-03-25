@@ -1,0 +1,49 @@
+.leader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+
+.leader__user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.leader__avatar-wrapper {
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.leader__avatar {
+  @include size(64px, 64px);
+  border-radius: 50%;
+}
+
+.leader__name {
+  @include clear-block;
+  max-width: 100px;
+  margin-bottom: 5px;
+  padding-left: 1px;
+  @include font(500, 16px, 18px, $font-roboto);
+}
+
+.leader__score {
+  @include clear-block;
+  // padding-left: 1px;
+  @include font(400, 14px, 16px, $font-roboto);
+}
+
+.leader__bar {
+  display: block;
+  width: 120px;
+  padding-top: 18px;
+  border-radius: 6px 6px 0 0;
+}
+
+.leader__bar > span {
+  @include font(700, 30px, 32px, $font-roboto);
+}

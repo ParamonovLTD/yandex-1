@@ -91,7 +91,7 @@ gulp.task('html', function () {
 gulp.task('copy', function () {
   return gulp
     .src(
-      ['source/fonts/**/*', 'source/images/**', 'source//*.ico', 'source/*.js'],
+      ['source/fonts/*', 'source/images/**', 'source//*.ico', 'source/*.js'],
       {
         base: 'source',
       }

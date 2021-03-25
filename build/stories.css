@@ -31,19 +31,19 @@ img {
 @font-face {
   font-weight: 700;
   font-family: 'Roboto';
-  src: url("./fonts/Roboto-Bold.ttf") format("ttf");
+  src: url("./fonts/Roboto-Bold.ttf") format("truetype");
   font-display: swap; }
 
 @font-face {
   font-weight: 500;
   font-family: 'Roboto';
-  src: url("./fonts/Roboto-Medium.ttf") format("ttf");
+  src: url("./fonts/Roboto-Medium.ttf") format("truetype");
   font-display: swap; }
 
 @font-face {
   font-weight: 400;
   font-family: 'Roboto';
-  src: url("./fonts/Roboto-Regular.ttf") format("ttf");
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
   font-display: swap; }
 
 body.theme_dark {
@@ -338,8 +338,7 @@ body.theme_light {
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  font-family: "Roboto", "Arial", sans-serif;
-  letter-spacing: 0.1px; }
+  font-family: "Roboto", "Arial", sans-serif; }
 
 .leader__score {
   margin: 0;

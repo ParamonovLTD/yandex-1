@@ -1,0 +1,23 @@
+.story {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 20px;
+  padding-right: 24px;
+  padding-left: 24px;
+  text-align: left;
+
+  @media (orientation: landscape) {
+    text-align: center;
+  }
+}
+
+.story__title {
+  @include title;
+  margin-bottom: 8px;
+}
+
+.story__subtitle {
+  @include subtitle;
+}
