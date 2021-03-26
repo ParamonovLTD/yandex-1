@@ -33,7 +33,6 @@
 
 .leader__score {
   @include clear-block;
-  // padding-left: 1px;
   @include font(400, 14px, 16px, $font-roboto);
 }
 
