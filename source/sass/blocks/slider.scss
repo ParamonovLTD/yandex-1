@@ -84,11 +84,12 @@
   }
 
   @media (orientation: landscape) {
-    margin-top: 6px;
+    margin-top: 4px;
+    padding-top: 10px;
 
-    &--choosen {
-      padding-top: 6px;
-    }
+    // &--choosen {
+    //   padding-top: 6px;
+    // }
 
     &-7 {
       display: none;
