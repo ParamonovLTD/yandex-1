@@ -411,13 +411,13 @@ body.theme_light {
     .slider {
       grid-template-columns: 1.5fr 1.9fr 1fr 1.9fr 1.5fr;
       grid-template-rows: repeat(4, 1fr);
-      grid-column-gap: 4px;
+      grid-column-gap: 0px;
       grid-row-gap: 0px;
       grid-template-areas: '. two . three .' 'one two up three four' 'one five down six four' '. five . six .';
       margin-top: 1px;
       padding-right: 0px;
       padding-bottom: 4px;
-      padding-left: 1px; } }
+      padding-left: 0px; } }
 
 .slider__user {
   display: -webkit-box;
