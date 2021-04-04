@@ -415,9 +415,9 @@ body.theme_light {
       grid-row-gap: 0px;
       grid-template-areas: '. two . three .' 'one two up three four' 'one five down six four' '. five . six .';
       margin-top: 1px;
-      padding-right: 2px;
+      padding-right: 0px;
       padding-bottom: 4px;
-      padding-left: 3px; } }
+      padding-left: 1px; } }
 
 .slider__user {
   display: -webkit-box;
