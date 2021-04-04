@@ -404,7 +404,9 @@ body.theme_light {
   grid-template-areas: 'one up three' 'one two three' 'four two six' 'four five six' 'seven five eight' 'seven down eight';
   height: 100%;
   margin-top: 22px;
-  padding-bottom: 12px; }
+  padding-right: 1px;
+  padding-bottom: 12px;
+  padding-left: 1px; }
   @media (orientation: landscape) {
     .slider {
       grid-template-columns: 1.5fr 1.9fr 1fr 1.9fr 1.5fr;
@@ -465,8 +467,6 @@ body.theme_light {
 .slider__avatar-wrapper {
   position: relative;
   margin-bottom: 2px; }
-  .slider__avatar-wrapper > .story__avatar-winner-emoji {
-    top: -27px; }
 
 .slider__button {
   width: 64px;
