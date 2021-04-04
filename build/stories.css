@@ -404,8 +404,7 @@ body.theme_light {
   grid-template-areas: 'one up three' 'one two three' 'four two six' 'four five six' 'seven five eight' 'seven down eight';
   height: 100%;
   margin-top: 23px;
-  padding-bottom: 12px;
-  padding-left: 1px; }
+  padding-bottom: 12px; }
   @media (orientation: landscape) {
     .slider {
       grid-template-columns: 1.5fr 1.9fr 1fr 1.9fr 1.5fr;
