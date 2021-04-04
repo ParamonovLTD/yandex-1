@@ -11,18 +11,18 @@ const templates = [
               <div class="leaders__member leader leader--winner">
                 <div class="leader__user">
                   <div class="leader__avatar-wrapper">
-                    <span class="leader__avatar-winner-emoji">${
+                    <span class="story__avatar-winner-emoji">${
                       data.emoji
                     }</span>
                     <img
-                      class="leader__avatar"
+                      class="story__user-avatar"
                       src="./images/1x/${data.users[0].avatar}"
                       width="64"
                       height="64"
                       alt="Фотография участника"
                     />
                   </div>
-                  <p class="leader__name">${data.users[0].name}</p>
+                  <p class="story__user-name">${data.users[0].name}</p>
                   <p class="leader__score">${data.users[0].valueText}</p>
                 </div>
                 <div class="leader__bar"><span>1</span></div>
@@ -33,14 +33,14 @@ const templates = [
                 <div class="leader__user">
                   <div class="leader__avatar-wrapper">
                     <img
-                      class="leader__avatar"
+                      class="story__user-avatar"
                       src="./images/1x/${data.users[1].avatar}"
                       width="64"
                       height="64"
                       alt="Фотография участника"
                     />
                   </div>
-                  <p class="leader__name">${data.users[1].name}</p>
+                  <p class="story__user-name">${data.users[1].name}</p>
                   <p class="leader__score">${data.users[1].valueText}</p>
                 </div>
                 <div class="leader__bar"><span>2</span></div>
@@ -51,14 +51,14 @@ const templates = [
                 <div class="leader__user">
                   <div class="leader__avatar-wrapper">
                     <img
-                      class="leader__avatar"
+                      class="story__user-avatar"
                       src="./images/1x/${data.users[2].avatar}"
                       width="64"
                       height="64"
                       alt="Фотография участника"
                     />
                   </div>
-                  <p class="leader__name">${data.users[2].name}</p>
+                  <p class="story__user-name">${data.users[2].name}</p>
                   <p class="leader__score">${data.users[2].valueText}</p>
                 </div>
                 <div class="leader__bar"><span>3</span></div>
@@ -69,14 +69,14 @@ const templates = [
                 <div class="leader__user">
                   <div class="leader__avatar-wrapper">
                     <img
-                      class="leader__avatar"
+                      class="story__user-avatar"
                       src="./images/1x/${data.users[3].avatar}"
                       width="64"
                       height="64"
                       alt="Фотография участника"
                     />
                   </div>
-                  <p class="leader__name">${data.users[3].name}</p>
+                  <p class="story__user-name">${data.users[3].name}</p>
                   <p class="leader__score">${data.users[3].valueText}</p>
                 </div>
                 <div class="leader__bar"><span>4</span></div>
@@ -90,14 +90,14 @@ const templates = [
                 <div class="leader__user">
                   <div class="leader__avatar-wrapper">
                     <img
-                      class="leader__avatar"
+                      class="story__user-avatar"
                       src="./images/1x/${data.users[4].avatar}"
                       width="64"
                       height="64"
                       alt="Фотография участника"
                     />
                   </div>
-                  <p class="leader__name">${data.users[4].name}</p>
+                  <p class="story__user-name">${data.users[4].name}</p>
                   <p class="leader__score">${data.users[4].valueText}</p>
                 </div>
                 <div class="leader__bar"><span>5</span></div>
@@ -108,7 +108,7 @@ const templates = [
               <div class="leader__user">
                 <div class="leader__avatar-wrapper">
                   <img
-                    class="leader__avatar"
+                    class="story__user-avatar"
                     src="./images/1x/${
                       data.selectedUserId
                         ? data.users.find(
@@ -121,7 +121,7 @@ const templates = [
                     alt="Фотография участника"
                   />
                 </div>
-                <p class="leader__name">${
+                <p class="story__user-name">${
                   data.selectedUserId
                     ? data.users.find(user => user.id === data.selectedUserId)
                         .name
@@ -147,27 +147,217 @@ const templates = [
       `
     },
   },
+  {
+    alias: 'vote',
+    getTemplate(data) {
+      return `
+      <div class="vote story">
+      <h1 class="story__title">${data.title}</h1>
+      <h2 class="story__subtitle">${data.subtitle}</h2>
+      <div class="vote__slider slider">
+        <div class="slider__user slider__user-1">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/${data.users[0].avatar}"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">${data.users[0].name}</p>
+        </div>
+        <div class="slider__user slider__user-2 slider__user--choosen">
+          <div class="slider__avatar-wrapper">
+            <span class="story__avatar-winner-emoji">👍</span>
+            <img
+              class="story__user-avatar"
+              src="./images/1x/${data.users[1].avatar}"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">${data.users[1].name}</p>
+        </div>
+        <div class="slider__user slider__user-3">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/${data.users[2].avatar}"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">${data.users[2].name}</p>
+        </div>
+        <div class="slider__user slider__user-4">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/${data.users[3].avatar}"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">${data.users[3].name}</p>
+        </div>
+        <div class="slider__user slider__user-5 slider__user--hover-for-test">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/${data.users[4].avatar}"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">${data.users[4].name}</p>
+        </div>
+        <div class="slider__user slider__user-6">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/${data.users[5].avatar}"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">${data.users[5].name}</p>
+        </div>
+        <div class="slider__user slider__user-7">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/${data.users[6].avatar}"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">${data.users[6].name}</p>
+        </div>
+        <div class="slider__user slider__user-8">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/${data.users[7].avatar}"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">${data.users[7].name}</p>
+        </div>
+        <button
+          class="slider__button slider__button--up"
+          aria-label="Листнуть слайдер вверх"
+          disabled
+        >
+          <svg width="64" height="64">
+            <use xlink:href="#button-dark"></use>
+          </svg>
+        </button>
+        <button
+          class="slider__button slider__button--down"
+          aria-label="Листнуть слайдер вниз"
+        >
+          <svg width="64" height="64">
+            <use xlink:href="#button-dark"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+      `
+    },
+  },
 ]
 
 window.renderTemplate = function (alias, data) {
   return templates.find(template => template.alias === alias).getTemplate(data)
 }
 
-document.body.insertAdjacentHTML(
-  'afterbegin',
-  window.renderTemplate('leaders', {
-    title: 'Больше всего коммитов',
-    subtitle: 'Спринт № 213',
-    emoji: '👑',
-    users: [
-      { id: 3, name: 'Дарья Ковалева', avatar: '3.jpg', valueText: '32' },
-      { id: 9, name: 'Сергей Бережной', avatar: '9.jpg', valueText: '27' },
-      { id: 7, name: 'Дмитрий Андриянов', avatar: '7.jpg', valueText: '22' },
-      { id: 6, name: 'Андрей Мокроусов', avatar: '6.jpg', valueText: '20' },
-      { id: 8, name: 'Александр Иванков', avatar: '8.jpg', valueText: '19' },
-    ],
-  })
-)
+// document.body.insertAdjacentHTML(
+//   'afterbegin',
+//   window.renderTemplate('vote', {
+//     title: 'Самый🔎внимательный разработчик',
+//     subtitle: 'Спринт № 213',
+//     emoji: '🔎',
+//     selectedUserId: 4,
+//     users: [
+//       {
+//         id: 1,
+//         name: 'Евгений Дементьев',
+//         avatar: '1.jpg',
+//         valueText: '22 голоса',
+//       },
+//       { id: 4, name: 'Вадим Пацев', avatar: '4.jpg', valueText: '19 голосов' },
+//       {
+//         id: 10,
+//         name: 'Яна Берникова',
+//         avatar: '10.jpg',
+//         valueText: '17 голосов',
+//       },
+//       {
+//         id: 12,
+//         name: 'Алексей Ярошевич',
+//         avatar: '12.jpg',
+//         valueText: '16 голосов',
+//       },
+//       {
+//         id: 11,
+//         name: 'Юрий Фролов',
+//         avatar: '11.jpg',
+//         valueText: '11 голосов',
+//       },
+//       {
+//         id: 2,
+//         name: 'Александр Шлейко',
+//         avatar: '2.jpg',
+//         valueText: '10 голосов',
+//       },
+//       {
+//         id: 5,
+//         name: 'Александр Николаичев',
+//         avatar: '5.jpg',
+//         valueText: '9 голосов',
+//       },
+//       {
+//         id: 6,
+//         name: 'Андрей Мокроусов',
+//         avatar: '6.jpg',
+//         valueText: '8 голосов',
+//       },
+//       {
+//         id: 8,
+//         name: 'Александр Иванков',
+//         avatar: '8.jpg',
+//         valueText: '7 голосов',
+//       },
+//       {
+//         id: 7,
+//         name: 'Дмитрий Андриянов',
+//         avatar: '7.jpg',
+//         valueText: '6 голосов',
+//       },
+//       {
+//         id: 3,
+//         name: 'Дарья Ковалева',
+//         avatar: '3.jpg',
+//         valueText: '5 голосов',
+//       },
+//       {
+//         id: 9,
+//         name: 'Сергей Бережной',
+//         avatar: '9.jpg',
+//         valueText: '4 голоса',
+//       },
+//     ],
+//   })
+// )
 
 // const culcBarHeight = () => {
 //   let maxBarHeight = window.orientation === 0 ? 48.65 : 28.72

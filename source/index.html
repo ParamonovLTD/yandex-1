@@ -8,105 +8,130 @@
     <link rel="stylesheet" href="./stories.css" />
   </head>
   <body class="theme_dark">
-    <!-- <template class="leaders-temp"> -->
-    <!-- <div class="leaders">
-      <h1 class="leaders__title">Больше всего коммитов</h1>
-      <h2 class="leaders__subtitle">Спринт № 213</h2>
-      <ul class="leaders__list">
-        <li class="leaders__item leaders__item-first-place">
-          <div class="leaders__member leader leader--winner">
-            <div class="leader__user">
-              <div class="leader__avatar-wrapper">
-                <img
-                  class="leader__avatar"
-                  src="./images/1x/3.jpg"
-                  width="64"
-                  height="64"
-                  alt="Фотография участника"
-                />
-              </div>
-              <p class="leader__name">Дарья Ковалева</p>
-              <p class="leader__score">32</p>
-            </div>
-            <div class="leader__bar"><span>1</span></div>
-          </div>
-        </li>
-        <li class="leaders__item leaders__item-second-place">
-          <div class="leaders__member leader">
-            <div class="leader__user">
-              <div class="leader__avatar-wrapper">
-                <img
-                  class="leader__avatar"
-                  src="./images/1x/9.jpg"
-                  width="64"
-                  height="64"
-                  alt="Фотография участника"
-                />
-              </div>
-              <p class="leader__name">Сергей Бережной</p>
-              <p class="leader__score">27</p>
-            </div>
-            <div class="leader__bar"><span>2</span></div>
-          </div>
-        </li>
-        <li class="leaders__item leaders__item-third-place">
-          <div class="leaders__member leader">
-            <div class="leader__user">
-              <div class="leader__avatar-wrapper">
-                <img
-                  class="leader__avatar"
-                  src="./images/1x/7.jpg"
-                  width="64"
-                  height="64"
-                  alt="Фотография участника"
-                />
-              </div>
-              <p class="leader__name">Дмитрий Андриянов</p>
-              <p class="leader__score">22</p>
-            </div>
-            <div class="leader__bar"><span>3</span></div>
-          </div>
-        </li>
-        <li class="leaders__item leaders__item-fourth-place">
-          <div class="leaders__member leader">
-            <div class="leader__user">
-              <div class="leader__avatar-wrapper">
-                <img
-                  class="leader__avatar"
-                  src="./images/1x/6.jpg"
-                  width="64"
-                  height="64"
-                  alt="Фотография участника"
-                />
-              </div>
-              <p class="leader__name">Андрей Мокроусов</p>
-              <p class="leader__score">20</p>
-            </div>
-            <div class="leader__bar"><span>4</span></div>
-          </div>
-        </li>
-        <li class="leaders__item leaders__item-choosen-user">
-          <div class="leaders__member leader">
-            <div class="leader__user">
-              <div class="leader__avatar-wrapper">
-                <img
-                  class="leader__avatar"
-                  src="./images/1x/8.jpg"
-                  width="64"
-                  height="64"
-                  alt="Фотография участника"
-                />
-              </div>
-              <p class="leader__name">Александр Иванков</p>
-              <p class="leader__score">19</p>
-            </div>
-            <div class="leader__bar"><span>5</span></div>
-          </div>
-        </li>
-      </ul>
-    </div> -->
-    <!-- </template> -->
+    <div style="display: none">
+      <include src="build/images/sprite.svg"></include>
+    </div>
 
+    <!-- <div class="vote story">
+      <h1 class="story__title">Самый🔎внимательный разработчик</h1>
+      <h2 class="story__subtitle">Спринт № 213</h2>
+      <div class="vote__slider slider">
+        <div class="slider__user slider__user-1">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/1.jpg"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">Евгений Дементьев</p>
+        </div>
+        <div class="slider__user slider__user-2 slider__user--choosen">
+          <div class="slider__avatar-wrapper">
+            <span class="story__avatar-winner-emoji">👍</span>
+            <img
+              class="story__user-avatar"
+              src="./images/1x/4.jpg"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">Вадим Пацев</p>
+        </div>
+        <div class="slider__user slider__user-3">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/10.jpg"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">Яна Берникова</p>
+        </div>
+        <div class="slider__user slider__user-4">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/12.jpg"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">Алексей Ярошевич</p>
+        </div>
+        <div class="slider__user slider__user-5 slider__user--hover-for-test">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/11.jpg"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">Юрий Фролов</p>
+        </div>
+        <div class="slider__user slider__user-6">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/2.jpg"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">Александр Шлейко</p>
+        </div>
+        <div class="slider__user slider__user-7">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/5.jpg"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">Александр Николаичев</p>
+        </div>
+        <div class="slider__user slider__user-8">
+          <div class="slider__avatar-wrapper">
+            <img
+              class="story__user-avatar"
+              src="./images/1x/6.jpg"
+              width="64"
+              height="64"
+              alt="Фотография пользователя"
+            />
+          </div>
+          <p class="story__user-name">Андрей Мокроусов</p>
+        </div>
+        <button
+          class="slider__button slider__button--up"
+          aria-label="Листнуть слайдер вверх"
+          disabled
+        >
+          <svg width="64" height="64">
+            <use xlink:href="#button-dark"></use>
+          </svg>
+        </button>
+        <button
+          class="slider__button slider__button--down"
+          aria-label="Листнуть слайдер вниз"
+        >
+          <svg width="64" height="64">
+            <use xlink:href="#button-dark"></use>
+          </svg>
+        </button>
+      </div>
+    </div> -->
     <script src="./stories.js"></script>
   </body>
 </html>

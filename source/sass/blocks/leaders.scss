@@ -15,17 +15,6 @@
     .leader__bar {
       height: 48.65vh;
     }
-
-    .leader__avatar-winner-emoji {
-      position: absolute;
-      z-index: 1;
-      top: -22px;
-      left: calc(50% - 4px);
-      @include size(32px, 32px);
-      font-size: 32px;
-      line-height: 32px;
-      transform: translateX(-50%);
-    }
   }
 
   &-second-place {

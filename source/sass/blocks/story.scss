@@ -21,3 +21,26 @@
 .story__subtitle {
   @include subtitle;
 }
+
+.story__user-name {
+  @include clear-block;
+  max-width: 100px;
+  margin-bottom: 5px;
+  @include font(500, 16px, 18px, $font-roboto);
+}
+
+.story__avatar-winner-emoji {
+  position: absolute;
+  z-index: 1;
+  top: -22px;
+  left: calc(50% - 4px);
+  @include size(32px, 32px);
+  font-size: 32px;
+  line-height: 32px;
+  transform: translateX(-50%);
+}
+
+.story__user-avatar {
+  @include size(64px, 64px);
+  border-radius: 50%;
+}

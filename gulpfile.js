@@ -75,10 +75,10 @@ gulp.task('webp', function () {
 
 gulp.task('sprite', function () {
   return gulp
-    .src('source/img/{icon-*,htmlacademy*}.svg')
+    .src('source/images/*.svg')
     .pipe(svgstore({ inlineSvg: true }))
-    .pipe(rename('sprite_auto.svg'))
-    .pipe(gulp.dest('build/img'))
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('build/images'))
 })
 
 gulp.task('html', function () {
