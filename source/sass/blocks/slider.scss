@@ -84,6 +84,12 @@
   }
 
   @media (orientation: landscape) {
+    margin-top: 6px;
+
+    &--choosen {
+      padding-top: 6px;
+    }
+
     &-7 {
       display: none;
     }
@@ -127,7 +133,7 @@
     position: relative;
 
     &--up {
-      top: -22%;
+      top: -25%;
     }
 
     &--down {

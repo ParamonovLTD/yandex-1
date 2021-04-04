@@ -459,10 +459,14 @@ body.theme_light {
   .slider__user-8 {
     grid-area: eight; }
   @media (orientation: landscape) {
-    .slider__user-7 {
-      display: none; }
-    .slider__user-8 {
-      display: none; } }
+    .slider__user {
+      margin-top: 6px; }
+      .slider__user--choosen {
+        padding-top: 6px; }
+      .slider__user-7 {
+        display: none; }
+      .slider__user-8 {
+        display: none; } }
 
 .slider__avatar-wrapper {
   position: relative;
@@ -487,7 +491,7 @@ body.theme_light {
     .slider__button {
       position: relative; }
       .slider__button--up {
-        top: -22%; }
+        top: -25%; }
       .slider__button--down {
         top: 40%; } }
 
