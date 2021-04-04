@@ -72,7 +72,7 @@ body.theme_dark {
             box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 6px 15px rgba(255, 162, 0, 0.4); }
   body.theme_dark .leader__bar > span {
     color: #fcfbf7; }
-  body.theme_dark .slider__user--hover-for-test, body.theme_dark .slider__user:hover {
+  body.theme_dark .slider__user:hover {
     background: radial-gradient(85.62% 148.33% at 49.85% 100%, rgba(68, 58, 42, 0.7864) 0%, rgba(0, 0, 0, 0.8) 100%);
     -webkit-box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.2), inset 2px 2px 16px rgba(255, 255, 255, 0.1);
             box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.2), inset 2px 2px 16px rgba(255, 255, 255, 0.1);
@@ -124,7 +124,7 @@ body.theme_light {
             box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(255, 176, 57, 0.8); }
   body.theme_light .leader__bar > span {
     color: #261c00; }
-  body.theme_light .slider__user--hover-for-test, body.theme_light .slider__user:hover {
+  body.theme_light .slider__user:hover {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.82%, rgba(244, 244, 244, 0.9)), color-stop(100%, #e9e9e9), to(rgba(234, 234, 234, 0)));
     background: linear-gradient(180deg, rgba(244, 244, 244, 0.9) 0.82%, #e9e9e9 100%, rgba(234, 234, 234, 0) 100%);
     -webkit-box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.5), inset 0px 0px 20px rgba(207, 207, 207, 0.5);
