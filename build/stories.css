@@ -437,6 +437,9 @@ body.theme_light {
   text-align: center;
   border-radius: 6px;
   cursor: pointer; }
+  .slider__user--choosen {
+    width: 104px;
+    padding-top: 10px; }
   .slider__user-1 {
     grid-area: one; }
   .slider__user-2 {
@@ -462,6 +465,8 @@ body.theme_light {
 .slider__avatar-wrapper {
   position: relative;
   margin-bottom: 2px; }
+  .slider__avatar-wrapper > .story__avatar-winner-emoji {
+    top: -27px; }
 
 .slider__button {
   width: 64px;

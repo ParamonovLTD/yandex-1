@@ -44,6 +44,11 @@
   border-radius: 6px;
   cursor: pointer;
 
+  &--choosen {
+    width: 104px;
+    padding-top: 10px;
+  }
+
   &-1 {
     grid-area: one;
   }
@@ -90,6 +95,10 @@
 .slider__avatar-wrapper {
   position: relative;
   margin-bottom: 2px;
+
+  & > .story__avatar-winner-emoji {
+    top: -27px;
+  }
 }
 
 .slider__button {
