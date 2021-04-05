@@ -409,7 +409,7 @@ body.theme_light {
   padding-left: 1px; }
   @media (orientation: landscape) {
     .slider {
-      grid-template-columns: 1.5fr 1.91fr 1fr 1.9fr 1.5fr;
+      grid-template-columns: 1.5fr 1.9fr 1fr 1.9fr 1.5fr;
       grid-template-rows: repeat(4, 1fr);
       grid-column-gap: 1px;
       grid-row-gap: 0px;
@@ -417,7 +417,7 @@ body.theme_light {
       margin-top: 1px;
       padding-right: 0px;
       padding-bottom: 5px;
-      padding-left: 0px; } }
+      padding-left: 1px; } }
 
 .slider__user {
   display: -webkit-box;
@@ -436,6 +436,7 @@ body.theme_light {
   max-height: 141px;
   margin-top: 4px;
   padding-top: 7px;
+  padding-right: 1px;
   text-align: center;
   border-radius: 6px;
   cursor: pointer; }
