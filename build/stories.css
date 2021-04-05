@@ -445,14 +445,12 @@ body.theme_light {
     width: 104px;
     padding-top: 10px; }
   .slider__user-1 {
-    left: 1px;
     grid-area: one; }
   .slider__user-2 {
     grid-area: two; }
   .slider__user-3 {
     grid-area: three; }
   .slider__user-4 {
-    right: 1px;
     grid-area: four; }
   .slider__user-5 {
     grid-area: five; }
@@ -466,6 +464,10 @@ body.theme_light {
     .slider__user {
       margin-top: 4px;
       padding-top: 10px; }
+      .slider__user-1 {
+        right: 1px; }
+      .slider__user-4 {
+        left: 1px; }
       .slider__user-7 {
         display: none; }
       .slider__user-8 {

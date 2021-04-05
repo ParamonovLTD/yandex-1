@@ -54,7 +54,6 @@
   }
 
   &-1 {
-    left: 1px;
     grid-area: one;
   }
 
@@ -67,7 +66,6 @@
   }
 
   &-4 {
-    right: 1px;
     grid-area: four;
   }
 
@@ -94,6 +92,14 @@
     // &--choosen {
     //   padding-top: 6px;
     // }
+
+    &-1 {
+      right: 1px;
+    }
+
+    &-4 {
+      left: 1px;
+    }
 
     &-7 {
       display: none;
