@@ -14,7 +14,7 @@
   height: 100%;
   margin-top: 22px;
   padding-right: 1px;
-  padding-bottom: 13px;
+  padding-bottom: 12px;
   padding-left: 1px;
 
   @media (orientation: landscape) {
@@ -70,6 +70,7 @@
   }
 
   &-5 {
+    top: -1px;
     grid-area: five;
   }
 
@@ -121,6 +122,7 @@
 }
 
 .slider__button {
+  position: relative;
   @include size(64px, 64px);
   padding: 0;
   background-color: transparent;
@@ -137,6 +139,7 @@
   }
 
   &--down {
+    top: -1px;
     grid-area: down;
   }
 

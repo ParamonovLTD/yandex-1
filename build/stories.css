@@ -405,7 +405,7 @@ body.theme_light {
   height: 100%;
   margin-top: 22px;
   padding-right: 1px;
-  padding-bottom: 13px;
+  padding-bottom: 12px;
   padding-left: 1px; }
   @media (orientation: landscape) {
     .slider {
@@ -453,6 +453,7 @@ body.theme_light {
   .slider__user-4 {
     grid-area: four; }
   .slider__user-5 {
+    top: -1px;
     grid-area: five; }
   .slider__user-6 {
     grid-area: six; }
@@ -478,6 +479,7 @@ body.theme_light {
   margin-bottom: 2px; }
 
 .slider__button {
+  position: relative;
   width: 64px;
   height: 64px;
   padding: 0;
@@ -491,6 +493,7 @@ body.theme_light {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }
   .slider__button--down {
+    top: -1px;
     grid-area: down; }
   @media (orientation: landscape) {
     .slider__button {
