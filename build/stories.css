@@ -167,6 +167,10 @@ body.theme_light {
     .story {
       text-align: center; } }
 
+.story.vote {
+  padding-right: 23px;
+  padding-left: 23px; }
+
 .story__title {
   margin: 0;
   padding: 0;
