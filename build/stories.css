@@ -167,9 +167,6 @@ body.theme_light {
     .story {
       text-align: center; } }
 
-.story.vote {
-  padding-right: 23px; }
-
 .story__title {
   margin: 0;
   padding: 0;
@@ -423,6 +420,7 @@ body.theme_light {
       padding-left: 1px; } }
 
 .slider__user {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -447,12 +445,14 @@ body.theme_light {
     width: 104px;
     padding-top: 10px; }
   .slider__user-1 {
+    left: 1px;
     grid-area: one; }
   .slider__user-2 {
     grid-area: two; }
   .slider__user-3 {
     grid-area: three; }
   .slider__user-4 {
+    right: 1px;
     grid-area: four; }
   .slider__user-5 {
     grid-area: five; }
